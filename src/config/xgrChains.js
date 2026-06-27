@@ -31,7 +31,7 @@ export const XGR_CHAINS = [
       blockExplorerUrls: ['https://explorer.testnet.xgr.network'],
     },
   },
- ];
+];
 
 export function findXgrChain(chainId) {
   const key = String(chainId || '').trim().toLowerCase();
@@ -40,5 +40,5 @@ export function findXgrChain(chainId) {
     || chain.chainIdHex.toLowerCase() === key
     || chain.chainIdDec === key
     || chain.label.toLowerCase() === key
-  )) || XGR_CHAINS[2];
+  )) || XGR_CHAINS[1];
 }

@@ -56,9 +56,9 @@ Typical `POST /runtime-config` input:
 ```json
 {
   "runtimeSessionId": "browser-tab-id",
-  "chainKey": "devnet",
-  "rpcUrl": "https://rpc1.devnet.xgr.network",
-  "explorerUrl": "https://explorer.devnet.xgr.network",
+  "chainKey": "testnet",
+  "rpcUrl": "https://rpc1.testnet.xgr.network",
+  "explorerUrl": "https://explorer.testnet.xgr.network",
   "orchestrationAddress": "0x...",
   "ostcId": "document_agent_waiter_flow",
   "ostcHash": "0x...",

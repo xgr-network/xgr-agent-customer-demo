@@ -99,7 +99,7 @@ The backend starts the waiter session and grants the agent wallet permission to 
 
 1. Open the app.
 2. Open **Live XDaLa setup and AI Agent credentials**.
-3. Select Devnet, Testnet, or Mainnet.
+3. Select Testnet, or Mainnet.
 4. Paste the deployed XRC-729 address.
 5. Calculate or paste the OSTC hash.
 6. Choose OpenAI or Gemini.

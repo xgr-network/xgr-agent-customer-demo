@@ -14,6 +14,7 @@ const includePaths = [
   'README.md',
   'CUSTOMER_QUICKSTART.md',
   '.env.example',
+  '.gitignore',
   'package.json',
   'package-lock.json',
   'Dockerfile',

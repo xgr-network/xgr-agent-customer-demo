@@ -80,4 +80,4 @@ The AI Agent sends a deterministic proof payload similar to this:
 
 ## Chain config
 
-`xgr-chain-config.example.json` contains the Devnet, Testnet, and Mainnet chain values used by the website live setup panel. The values mirror the xDaLaWeb chain service so customers can copy the config into their own agent implementation.
+`xgr-chain-config.example.json` contains the Testnet, and Mainnet chain values used by the website live setup panel. The values mirror the xDaLaWeb chain service so customers can copy the config into their own agent implementation.

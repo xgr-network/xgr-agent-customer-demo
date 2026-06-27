@@ -17,15 +17,6 @@
       "rpcUrl": "https://rpc1.testnet.xgr.network",
       "explorerUrl": "https://explorer.testnet.xgr.network",
       "compileEndpoint": "https://deploy.testnet.xgr.network/compile"
-    },
-    {
-      "id": "xgr-devnet",
-      "label": "XGR Devnet",
-      "chainIdHex": "0x75F",
-      "chainIdDec": "1887",
-      "rpcUrl": "https://rpc1.devnet.xgr.network",
-      "explorerUrl": "https://explorer.devnet.xgr.network",
-      "compileEndpoint": "https://deploy.devnet.xgr.network/compile"
     }
   ]
 }
