@@ -1,0 +1,190 @@
+{
+  "format": "xgr-multi-bundle@1",
+  "kind": "xgr.multi-bundle",
+  "version": 1,
+  "bundles": [
+    {
+      "bundleId": "document_agent_waiter",
+      "items": [
+        {
+          "payload": {
+            "RequestId": {
+              "type": "string"
+            },
+            "WakeMarker": {
+              "type": "string"
+            }
+          },
+          "rules": [
+            "[RequestId] != \"\""
+          ],
+          "onValid": {
+            "waitSec": 600,
+            "payload": {
+              "memo": "document-waiter-armed",
+              "RequestId": "[RequestId]",
+              "WakeMarker": "[WakeMarker]"
+            }
+          },
+          "onInvalid": {
+            "payload": {
+              "memo": "document-waiter-arm-invalid",
+              "RequestId": "[RequestId]",
+              "WakeMarker": "[WakeMarker]"
+            }
+          },
+          "meta": {
+            "bundleId": "document_agent_waiter",
+            "alias": "XRC137_ARM_DOCUMENT_WAIT",
+            "type": "xrc137"
+          }
+        },
+        {
+          "payload": {
+            "RequestId": {
+              "type": "string"
+            },
+            "WakeMarker": {
+              "type": "string"
+            },
+            "DocumentName": {
+              "type": "string",
+              "default": ""
+            },
+            "DocumentDate": {
+              "type": "string",
+              "default": ""
+            },
+            "DocumentHash": {
+              "type": "string",
+              "default": ""
+            },
+            "HashAlgorithm": {
+              "type": "string",
+              "default": "sha256"
+            },
+            "InsuranceNumber": {
+              "type": "string",
+              "default": ""
+            },
+            "DocumentType": {
+              "type": "string",
+              "default": "unknown"
+            },
+            "Confidence": {
+              "type": "double",
+              "default": 0
+            },
+            "ProofCreatedAt": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          "rules": [
+            "[DocumentHash] != \"\"",
+            "[HashAlgorithm] == \"sha256\"",
+            "[InsuranceNumber] != \"\"",
+            "[Confidence] >= 0.5"
+          ],
+          "onValid": {
+            "payload": {
+              "memo": "document-proof-accepted",
+              "RequestId": "[RequestId]",
+              "WakeMarker": "[WakeMarker]",
+              "DocumentName": "[DocumentName]",
+              "DocumentDate": "[DocumentDate]",
+              "DocumentHash": "[DocumentHash]",
+              "HashAlgorithm": "[HashAlgorithm]",
+              "InsuranceNumber": "[InsuranceNumber]",
+              "DocumentType": "[DocumentType]",
+              "Confidence": "[Confidence]",
+              "ProofCreatedAt": "[ProofCreatedAt]"
+            }
+          },
+          "onInvalid": {
+            "payload": {
+              "memo": "document-proof-rejected",
+              "RequestId": "[RequestId]",
+              "WakeMarker": "[WakeMarker]",
+              "DocumentHash": "[DocumentHash]",
+              "HashAlgorithm": "[HashAlgorithm]",
+              "InsuranceNumber": "[InsuranceNumber]",
+              "Confidence": "[Confidence]"
+            }
+          },
+          "meta": {
+            "bundleId": "document_agent_waiter",
+            "alias": "XRC137_WAIT_FOR_DOCUMENT",
+            "type": "xrc137"
+          }
+        },
+        {
+          "payload": {
+            "RequestId": {
+              "type": "string"
+            },
+            "DocumentHash": {
+              "type": "string",
+              "default": ""
+            },
+            "InsuranceNumber": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          "rules": [
+            "1 == 1"
+          ],
+          "onValid": {
+            "payload": {
+              "memo": "document-agent-demo-done",
+              "RequestId": "[RequestId]",
+              "DocumentHash": "[DocumentHash]",
+              "InsuranceNumber": "[InsuranceNumber]"
+            }
+          },
+          "onInvalid": {},
+          "meta": {
+            "bundleId": "document_agent_waiter",
+            "alias": "XRC137_DONE",
+            "type": "xrc137"
+          }
+        },
+        {
+          "id": "document_agent_waiter_flow",
+          "structure": {
+            "ARM_WAIT": {
+              "rule": "cm:xrc137:XRC137_ARM_DOCUMENT_WAIT",
+              "onValid": {
+                "spawns": [
+                  "WAIT_FOR_DOCUMENT"
+                ]
+              },
+              "onInvalid": {}
+            },
+            "WAIT_FOR_DOCUMENT": {
+              "rule": "cm:xrc137:XRC137_WAIT_FOR_DOCUMENT",
+              "onValid": {
+                "spawns": [
+                  "DONE"
+                ]
+              },
+              "onInvalid": {}
+            },
+            "DONE": {
+              "rule": "cm:xrc137:XRC137_DONE",
+              "onValid": {},
+              "onInvalid": {}
+            }
+          },
+          "meta": {
+            "bundleId": "document_agent_waiter",
+            "alias": "document_agent_waiter_flow",
+            "type": "xrc729"
+          },
+          "name": "document_agent_waiter"
+        }
+      ]
+    }
+  ]
+}

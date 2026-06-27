@@ -1,0 +1,13 @@
+services:
+  xgr-agent:
+    build: .
+    container_name: xgr-agent-demo
+    ports:
+      - "3020:3020"
+    env_file:
+      - path: .env
+        required: true
+      - path: .env.secrets
+        required: false
+    environment:
+      - NODE_ENV=production

@@ -1,0 +1,13 @@
+{
+  "RequestId": "demo-request-001",
+  "WakeMarker": "initial",
+  "__wakeUp": {
+    "steps": {
+      "WAIT_FOR_DOCUMENT": {
+        "rpc": [
+          "0xREPLACE_WITH_AGENT_ADDRESS"
+        ]
+      }
+    }
+  }
+}

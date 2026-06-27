@@ -1,0 +1,31 @@
+{
+  "chains": [
+    {
+      "id": "xgr-mainnet",
+      "label": "XGR Mainnet",
+      "chainIdHex": "0x66B",
+      "chainIdDec": "1643",
+      "rpcUrl": "https://rpc.xgr.network",
+      "explorerUrl": "https://explorer.xgr.network",
+      "compileEndpoint": "https://deploy.xgr.network/compile"
+    },
+    {
+      "id": "xgr-testnet",
+      "label": "XGR Testnet",
+      "chainIdHex": "0x757",
+      "chainIdDec": "1879",
+      "rpcUrl": "https://rpc1.testnet.xgr.network",
+      "explorerUrl": "https://explorer.testnet.xgr.network",
+      "compileEndpoint": "https://deploy.testnet.xgr.network/compile"
+    },
+    {
+      "id": "xgr-devnet",
+      "label": "XGR Devnet",
+      "chainIdHex": "0x75F",
+      "chainIdDec": "1887",
+      "rpcUrl": "https://rpc1.devnet.xgr.network",
+      "explorerUrl": "https://explorer.devnet.xgr.network",
+      "compileEndpoint": "https://deploy.devnet.xgr.network/compile"
+    }
+  ]
+}
