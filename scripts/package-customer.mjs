@@ -15,6 +15,8 @@ const includePaths = [
   'CUSTOMER_QUICKSTART.md',
   '.env.example',
   '.gitignore',
+  'index.html',
+  'vite.config.js',
   'package.json',
   'package-lock.json',
   'Dockerfile',
