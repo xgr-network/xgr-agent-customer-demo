@@ -31,23 +31,7 @@ export const XGR_CHAINS = [
       blockExplorerUrls: ['https://explorer.testnet.xgr.network'],
     },
   },
-  {
-    id: 'xgr-devnet',
-    label: 'XGR Devnet',
-    chainIdHex: '0x75F',
-    chainIdDec: '1887',
-    rpcUrl: 'https://rpc1.devnet.xgr.network',
-    explorerUrl: 'https://explorer.devnet.xgr.network',
-    compileEndpoint: 'https://deploy.devnet.xgr.network/compile',
-    walletConfig: {
-      chainId: '0x75F',
-      chainName: 'XGR Devnet',
-      rpcUrls: ['https://rpc1.devnet.xgr.network'],
-      nativeCurrency: { name: 'XGR', symbol: 'XGR', decimals: 18 },
-      blockExplorerUrls: ['https://explorer.devnet.xgr.network'],
-    },
-  },
-];
+ ];
 
 export function findXgrChain(chainId) {
   const key = String(chainId || '').trim().toLowerCase();
