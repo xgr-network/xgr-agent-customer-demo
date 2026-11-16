@@ -1,5 +1,7 @@
 # XGR AI Agent Demo
 
+> **XGRChain ecosystem baseline:** The current published XGRChain node is **[v3.5.1](https://github.com/xgr-network/xgr-node/releases/tag/v3.5.1)** (15 November 2026; [operator reference](https://github.com/xgr-network/XGR/blob/main/docs/chain/XGRCHAIN_v3.5.1_Release_and_Operations.md)). This identifies the **node** release only, not this project's own version, compatibility certification, or deployment state. The F-20 Direct-BLS durability fix introduces no new consensus fork or genesis migration.
+
 A customer-ready demo application that shows how an AI Agent can read a business document, create a deterministic document proof, and wake a waiting XDaLa session on-chain.
 
 The repository is meant to be downloaded, unpacked, configured, and run by a customer without needing code from `xDaLaWeb`.
